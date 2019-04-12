@@ -1,12 +1,12 @@
 # handson-docker-k8s
 
+![banner](poster.png)
+
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 > Handson workshop on Docker and Kubernetes. Happended on 11 April, 2019 as part of #ThursdayDevops.
 
 [Slide link](https://slides.com/worldofprasanna/hands-on-session/live#/)
-
-![Poster](https://github.com/worldofprasanna/thursday-devops-sessions/blob/master/handson-docker-kubernetes/poster.png)
 
 ## Table of Contents
 
