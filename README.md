@@ -15,11 +15,13 @@
 ## Install
 
 ```
+Check the individual folders for more information
 ```
 
 ## Usage
 
 ```
+Check the individual folders for more information
 ```
 
 ## Maintainers
