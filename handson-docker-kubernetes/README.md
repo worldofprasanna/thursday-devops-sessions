@@ -6,7 +6,7 @@
 
 [Slide link](https://slides.com/worldofprasanna/hands-on-session/live#/)
 
-![Poster](https://github.com/worldofprasanna/docker-k8s-handson-session/blob/master/poster.png)
+![Poster](https://github.com/worldofprasanna/thursday-devops-sessions/handson-docker-kubernetes/blob/master/poster.png)
 
 ## Table of Contents
 
