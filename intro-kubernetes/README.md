@@ -1,5 +1,7 @@
 # k8s-intro-session
 
+![banner](poster.png)
+
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 > Intro session to kubernetes. Source files used for the demo
