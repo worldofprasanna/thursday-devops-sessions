@@ -1,0 +1,14 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: dashboard-pod
+    labels:
+      app: dashboard
+  spec:
+    containers:
+      - name: dashboard-container
+        image: wordofprasanna/dashboard:latest
+        ports:
+          - containerPort: 8080
+            name: dashboard-port

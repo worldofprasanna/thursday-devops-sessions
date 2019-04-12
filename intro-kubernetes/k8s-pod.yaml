@@ -1,0 +1,14 @@
+---
+ apiVersion: v1
+ kind: Pod
+ metadata:
+   name: session-docker-pod
+   labels:
+     app: session-docker-pod
+ spec:
+   containers:
+     - name: session-docker-pod
+       image: session-docker
+       imagePullPolicy: Never
+       ports:
+         - containerPort: 80

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment-yaml
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-label
+  template:
+    metadata:
+      labels:
+        app: pod-label
+    spec:
+      containers:
+      - image: k8s-demo:latest
+        name: k8s-demo
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+          name: app-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-deployment-yaml
+spec:
+  ports:
+  - name: http
+    port: 80
+    targetPort: app-port
+    protocol: TCP
+  selector:
+    app: pod-label
+  type: NodePort

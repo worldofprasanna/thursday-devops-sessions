@@ -1,0 +1,12 @@
+---
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: dashboard
+    labels:
+      app: dashboard
+  spec:
+    containers:
+      - name: dashboard-container
+        image: dashboard-demo:latest
+        imagePullPolicy: Never
