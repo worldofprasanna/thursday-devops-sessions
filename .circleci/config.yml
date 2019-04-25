@@ -7,16 +7,47 @@ jobs:
                 - run:
                         name: Unit Test
                         command: echo "Run your unit test command"
-        build:
+        lint_test:
+                docker:
+                - image: busybox:latest
+                steps:
+                - run:
+                        name: Lint Test
+                        command: echo "Run your lint test command"
+        build_and_publish_artefact:
                 docker:
                 - image: busybox:latest
                 steps:
                 - run:
                         name: Build Phase
                         command: echo "Run your command to build the project"
+        deploy_to_dev:
+                docker:
+                - image: busybox:latest
+                steps:
+                - run:
+                        name: Deploy to dev environment
+                        command: echo "Run your deploy to dev command"
+        deploy_to_qa:
+                docker:
+                - image: busybox:latest
+                steps:
+                - run:
+                        name: Deploy to qa environment
+                        command: echo "Run your deploy to qa command"
 workflows:
         version: 2
         ci_pipeline:
                 jobs:
+                - lint_test
                 - unit_test
-                - build
+                - build_and_publish_artefact:
+                        requires:
+                        - unit_test
+                        - lint_test
+                - deploy_to_dev:
+                        requires:
+                        - build_and_publish_artefact
+                - deploy_to_qa:
+                        requires:
+                        - deploy_to_dev
