@@ -1,0 +1,9 @@
+version: 2
+jobs:
+        build:
+                docker:
+                - image: busybox:latest
+                steps:
+                - run:
+                        name: Testing CircleCI
+                        command: echo "Hello CircleCI"
