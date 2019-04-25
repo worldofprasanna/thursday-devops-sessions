@@ -48,6 +48,10 @@ workflows:
                 - deploy_to_dev:
                         requires:
                         - build_and_publish_artefact
-                - deploy_to_qa:
+                - hold_for_approval:
+                        type: approval
                         requires:
                         - deploy_to_dev
+                - deploy_to_qa:
+                        requires:
+                        - hold_for_approval
