@@ -1,9 +1,22 @@
 version: 2
 jobs:
+        unit_test:
+                docker:
+                - image: busybox:latest
+                steps:
+                - run:
+                        name: Unit Test
+                        command: echo "Run your unit test command"
         build:
                 docker:
                 - image: busybox:latest
                 steps:
                 - run:
-                        name: Testing CircleCI
-                        command: echo "Hello CircleCI"
+                        name: Build Phase
+                        command: echo "Run your command to build the project"
+workflows:
+        version: 2
+        ci_pipeline:
+                jobs:
+                - unit_test
+                - build
