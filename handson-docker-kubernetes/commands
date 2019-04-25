@@ -1,0 +1,28 @@
+minikube status
+eval $(minikube docker-env)
+kubectl config current-context
+
+---
+
+docker build -t dashboard-demo:latest . => Docker Image
+kubectl create -f deploy_scripts/pod.yaml => Kubernetest
+kubectl get pods
+minikube service dashboard-service --url
+---
+
+
+
+Summary:
+
+1. minikube
+2. kubectl
+3. Docker Image
+4. Docker run
+5. minikube docker-env
+6. pod
+7. Service Types
+8. Deployment
+9. Scale the deployment
+
+
+
