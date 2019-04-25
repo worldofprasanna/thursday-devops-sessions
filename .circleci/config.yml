@@ -14,10 +14,46 @@ jobs:
                 - run:
                         name: Lint Test
                         command: echo "Going to run Lint Test"
+        build_artifact:
+                docker:
+                - image: busybox:latest
+                steps:
+                - run:
+                        name: Build Artifact
+                        command: echo "Going to run the build artifact"
 
+        deploy_to_dev:
+                docker:
+                - image: busybox:latest
+                steps:
+                - run:
+                        name: Deploy to Dev
+                        command: echo "Going to deploy to dev"
+        deploy_to_qa:
+                docker:
+                - image: busybox:latest
+                steps:
+                - run:
+                        name: Deploy to QA
+                        command: echo "Going to deploy to QA"
+                - run:
+                        name: Step no 2
+                        command: echo "Going to deploy to QA again"
 workflows:
         version: 2
         sample_pipeline:
                 jobs:
-                        - unit_test
                         - linting
+                        - unit_test:
+                                requires:
+                                - linting
+                        - build_artifact:
+                                requires:
+                                - unit_test
+                        - deploy_to_dev:
+                                requires:
+                                - build_artifact
+                        - deploy_to_qa:
+                                requires:
+                                - deploy_to_dev
+
