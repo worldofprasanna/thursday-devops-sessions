@@ -44,12 +44,11 @@ workflows:
         sample_pipeline:
                 jobs:
                         - linting
-                        - unit_test:
-                                requires:
-                                - linting
+                        - unit_test
                         - build_artifact:
                                 requires:
                                 - unit_test
+                                - linting
                         - deploy_to_dev:
                                 requires:
                                 - build_artifact
